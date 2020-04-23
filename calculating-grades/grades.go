@@ -69,16 +69,29 @@ func calGrade(s student) (float32, rune) {
 	var percent float32
 	grade := 'F'
 
-	percent = (s.courses.algorithm + s.courses.calculus + s.courses.dataLogic) / 3
-	if percent >= 90.0 {
+	// Changing to switch statement
+	// if percent >= 90.0 {
+	// 	grade = 'A'
+	// } else if percent >= 80.0 && percent < 90.0 {
+	// 	grade = 'B'
+	// } else if percent >= 70.0 && percent < 80.0 {
+	// 	grade = 'C'
+	// } else if percent >= 60.0 && percent < 70.0 {
+	// 	grade = 'D'
+	// } else {
+	// 	grade = 'F'
+	// }
+
+	switch percent = (s.courses.algorithm + s.courses.calculus + s.courses.dataLogic) / 3; {
+	case percent > 90.0:
 		grade = 'A'
-	} else if percent >= 80.0 && percent < 90.0 {
+	case percent >= 80.0 && percent < 90.0:
 		grade = 'B'
-	} else if percent >= 70.0 && percent < 80.0 {
+	case percent >= 70.0 && percent < 80.0:
 		grade = 'C'
-	} else if percent >= 60.0 && percent < 70.0 {
+	case percent >= 60.0 && percent < 70.0:
 		grade = 'D'
-	} else {
+	default:
 		grade = 'F'
 	}
 
